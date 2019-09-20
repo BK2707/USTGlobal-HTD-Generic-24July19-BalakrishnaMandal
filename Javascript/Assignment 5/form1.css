@@ -1,0 +1,63 @@
+body{
+    width: 350px;
+    margin-left: 35%;
+    
+    /*margin: 10px 0 0 100px;  */
+    
+
+    
+}
+form
+{
+    border: 2px solid black;
+    text-orientation: left;
+    border-radius: 10px;
+    padding-left: 15%;
+    
+
+    
+}
+input{
+    margin: 5px;
+    text-align:left;
+    
+}
+input[type = "checkbox"],input[type = "radio"]{
+    margin: 10px;
+    align-self: center;
+
+}
+label{
+    margin: 5px;
+    
+}
+button
+{
+    margin-right: 30%;
+    
+}
+input[type = "submit"]
+{
+    background-color: aquamarine;
+}
+input[type = "reset"]
+{
+    background-color: aquamarine;
+}
+#fnameerror 
+{
+    color: red;
+}
+#lnameerror
+{
+    color: red;
+}
+#cnameerror
+{
+    color:red;
+}
+#empiderror
+{
+    color:red;
+}
+

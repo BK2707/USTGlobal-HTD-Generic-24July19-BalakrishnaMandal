@@ -1,0 +1,38 @@
+<!-- Sting Interpulation -->
+<h1 [class]='textClasses'>{{name}}</h1>
+<h1 [class.bg-danger]='redColor'[class.bg-success]=!redColor>{{5+5}}</h1>
+<!------------------------------------------------------------------------------------------>
+<img [src]="imgURL" alt="">&nbsp;&nbsp;&nbsp;&nbsp;<!-- using property error -->
+<img src="{{imgURL}}" alt=""><!-- instead of property binding we use string interpolation -->
+<!-- Note: we cannot use both property binding and string interpolation together -->
+<!------------------------------------------------------------------------------------------->
+<!-- Style Binding -->
+<br>
+<p [style.background]="paragraphStyle ? 'yellow':'palegreen'" [style.padding]="padding">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, blanditiis?</p>
+<!------------------------------------------------------------------------------------------->
+<!-- Attribute Binding -->
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th [attr.colspan]='columnSpan'>Students</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Balakrishna</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Abhi</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Raja</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Krishna</td>
+        </tr>
+    </tbody>
+</table>

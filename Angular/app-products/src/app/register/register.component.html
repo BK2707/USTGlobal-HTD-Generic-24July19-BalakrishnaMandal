@@ -1,0 +1,79 @@
+<div class="container">
+    <div class="card card-body">
+        <form action="" method="post" role="form" [formGroup]='registerForm' (ngSubmit)=printForm(registerForm)>
+            <legend class="text-center">REGISTER IT!!</legend>
+            <div class="form-group">
+              <label for="">Name</label>
+              <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" formControlName='name'>
+              <div class="alert alert-danger"
+              *ngIf='name.invalid && name.errors'>
+              <div class="alert alert-danger"
+              *ngIf = 'name.errors.minlength'>
+              enter minimum letter of 5</div>
+                <div class="alert alert-danger"
+                *ngIf = 'name.errors.required'>
+              please enter your name</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="">EmailId</label>
+              <input type="text" name="email" id="email" class="form-control" placeholder="Enter your EmailId" formControlName='email'>
+              <div class="alert alert-danger" 
+              *ngIf = 'email.invalid && email.errors'>
+              <div class="alert alert-danger" 
+              *ngIf = 'email.errors.required'>
+              Enter your emailId</div>
+              <div class="alert alert-danger" 
+              *ngIf='email.errors.email'>
+              Enter only the email</div>
+              <div class="alert alert-danger"
+              *ngIf = 'email.errors.noSpace'>
+              Please enter a valid emailId</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="">Mobile Number</label>
+              <input type="number" name="mobile" id="mobile" class="form-control" placeholder="Enter your mobile number" FormControlName='mobile'>
+              <div class="alert alert-danger"
+              *ngIf = 'mobile.invalid && mobile.errors'>
+              <div class="alert alert-danger" 
+              *ngIf='mobile.errors.minlength'>
+              Enter valid mobile number</div>
+              <div class="alert alert-danger"
+              *ngIf='mobile.errors.required'>
+              Enter your mobile number</div>
+            </div>
+            </div>
+            <div class="form-group">
+                <label for="">Password</label>
+                <input type="text" name="password" id="password" class="form-control" placeholder="Enter the password" FormControlName='password'>
+                <div class="alert alert-danger"
+                *ngIf = 'password.invalid && password.errors'>
+                <div class="alert alert-danger" 
+                *ngIf='password.errors.minlength'>
+                Enter password of minimum length 5</div>
+                <div class="alert alert-danger"
+                *ngIf='password.errors.required'>
+                Enter Password</div>
+              </div>
+              </div>
+              <div class="form-group">
+                <label for="">Confirm Password</label>
+                <input type="text" name="cpassword" id="cpassword" class="form-control" placeholder="Confirm your password" FormControlName='cpassword'>
+                <div class="alert alert-danger"
+                *ngIf = 'cpassword.invalid && cpassword.errors'>
+                <div class="alert alert-danger" 
+                *ngIf='cpassword.errors.minlength'>
+                Password Mismatch</div>
+                <div class="alert alert-danger"
+                *ngIf='cpassword.errors.required'>
+                Enter confirm Password</div>
+              </div>
+              </div>
+              <div class="btn-group offset-4">
+                  <button type="submit" class="btn btn-outline-primary">Submit</button>
+                  <button type="reset" class="btn btn-outline-success offset-1">Reset</button>
+              </div>
+        </form>
+    </div>
+</div>

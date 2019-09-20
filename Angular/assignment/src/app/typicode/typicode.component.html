@@ -1,0 +1,19 @@
+<body style="background-color: rgb(1, 1, 27)">
+    <table class="table-bordered table-hover col-md-10 offset-1" style="border: black;">
+        <thead class="bg-primary text-center" style="font-size: 20px;font-family: cursive">
+            <th>UserId</th>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Body</th>
+        </thead>
+        <tbody style="background-color: darkgray">
+            <tr *ngFor = 'let typi of typicode'>
+                <td>{{typi.userId}}</td>
+                <td>{{typi.id}}</td>
+                <td>{{typi.title}}</td>
+                <td>{{typi.body}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>

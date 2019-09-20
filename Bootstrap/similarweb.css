@@ -1,0 +1,12 @@
+#back{
+    background-color: rgb(245,243,243);
+    background-image: url('./Images/header-bg.png');
+    background-repeat: no-repeat;
+    background-position:right; 
+    background-size: contain;
+
+}
+a
+{
+    color: grey;
+}

@@ -1,0 +1,8 @@
+<div class="container">
+    <div class="card card-body" class="col-md-3 float-left" *ngFor="let pro of products">
+        <h1>{{pro.name}}</h1>
+        <img src="{{pro.img}}" alt="" (click) ='sendDetails(pro)'>
+        <h5>{{pro.price}}</h5>
+    </div>
+    <app-products-details [productDetails]='product'></app-products-details>
+</div>

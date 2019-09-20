@@ -1,0 +1,13 @@
+public class ForLoop  
+{
+	public static void main(String[] args) 
+	{   
+		int i;
+		for ( ;  ; )
+		{
+			//System.out.println(" 27 * "+i+" = "+i*27);
+		}	
+		
+		//System.out.println("Code Outside for loop!!");
+	}
+}

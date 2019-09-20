@@ -1,0 +1,389 @@
+1.Primary Key- It is combination of not null and unique.It is uniquely identifies each record in a database.
+Characteristic of Primary key:
+1.It can not accept null value.
+2.A column must have only one primary key not more than that.
+3.A table can have only primary key. 
+
+=========================================================================================
+NOTE: it is not to have primary key mandatory but its a good practice to have primary key. 
+=========================================================================================
+
+2.Foreign key  - it is used to relate to tables.it applied to column level and table level.
+Characteristic of Foreign key:
+1.A table in which foreign key is present , it is known as child table.
+2.A table in which its actually belongs ,i.e is known as parent table.
+3.Foreign key is must and should defiend as primary key in its parent table.
+4.A column assign as foreign key can be null and duplicate value.
+5.We can not insert a value in a column defined as foreign key which is not present in a parent table column.
+
+3.CHECK- this constraints is used to restrict the value of the column  between a range.
+its like a condition checking before saving a data.
+
+				DATATYPE
+->Datatype selection is usually diactated by nature of data and by intended use.
+->Pay close attention expected to use.
+
+DATATYPE		FROM		TO
+bit			0		1
+tinyint			0		255
+smallint		           -32,768		32,767
+int			-214483648
+bigint
+decimal
+numeric
+float
+real			-3.4E+38		3.4E+38
+
+*CHARACTER AND STRING DATA TYPES
+DATATYPE			DESCRIPTION
+CHAR			fixed length with max length of 8000 char
+varchar			variable length storage with max length of 8000 char
+varchar(max)		variable length storage with provided max char, not supported in MySQL
+text			variable length storage with max size of 2GB data
+
+
+*DIFFERENCE B/W varchar and char
+->char datatype is a fixed length of memory allocation.
+eg: if we use name 'bala'
+->varchar is a variable length in memory allocation.
+
+*predefined datatype
+DATATYPE			DESCRIPTION
+date				YYYY-MM-DD
+time				HH:MI:SS
+datetime				YYYY-MM-DD HH:MI:SS
+timestamp				1970-01-01 00:00:00 UTC
+year				
+
+===================================================================================
+NOTE:::binary large datatype is use to store audio,video and picture.	
+==================================================================================
+*miscellaneous datatypes
+DATATYPE			DESCRIPTION
+CLOB				
+BLOB
+XML
+JSON
+
+==============================================================================================
+NOTE:::by creating a table datatype is mandatory to assign to a column but constraint are not mandatory but it is 
+highly recommended.
+==============================================================================================
+
+				HISTORY
+** IBM is a first company to develope DBMS which follows relational model.
+** IBM develops a lang to communicate systemR means relational mode SEQUEL.
+** Due to its simplicity is was very popular at that time, in 1980 ANSI acquired SEQUEL lang and after doing some modification
+    then it is known as SQL and made standard lang for RDBMS.
+
+===============================================================================================
+NOTE:::SQL is insensitive.
+===============================================================================================
+					mysql.
+->SQL(Structured Query Language) is a query language which is use for storing and managing data in database.
+->Its a first commercial lang introduce for EF Codd's relation model database.
+->query and other sql operation are wriiten in statement.
+
+five sql 
+
+DDL-data definition language-->create,alter,drop,truncate,rename
+DML-data manipulation language-->insert, delete,update,truncate
+DCL-data control language-->
+TCL-transactional control language-->ROLLBACK(before we have to set autocommit = 0), SAVEPOINT(usually works with ROLLBACK)
+DQL-data query language-->there is only one command in DQL i.e select.With the help of select command we can perform retrieval from the 
+			the table in three ways:
+			-->projection: In order to get some specific info from the table then we will go for projection.
+			-->selection: If u want to select or retriving the data of row and column from the table then go for selection.
+			-->joins: Retrival of data from multiple of table at the same time, is known as joins.
+	
+			select * from <table_name>;
+			>>'from' is use to select the table from the database,we can pass the table name as a argument.
+			>>'select' is use to select columns or an expression from the table which under an execution and it is 
+			   also responsible for selection.
+			>> '*' is use to select all the data from the table.
+
+		            ORDER OF EXECUTION
+			==>from-->select-->*.
+
+========================CLAUSES IN SQL==========================================
+->SQL statement consists of multiple of clauses. 
+->Each clauses in the sub programe which accepts some argument.
+-->WHERE CLAUSE
+>>the where clause is use to filter the records.
+>> it extract only those records that fulfill a specified condition.
+>>it doesnt support insert operation.
+>>from-->where-->select.
+
+******************************DELETE VS TRUNCATE VS DROP***********************************
+->whenever we want to delete particular data from table we use "delete" command.
+->whenever we want to delete whole data from table we use "truncate" command.
+->whenever we want to delete data as well as structure of the table we use "drop" command.
+*************************************************************************************************
+
+-->EXPRESSION--------------------------------------------------------------------------------------------------
+when a statement which gives some output is known as expression.
+          		c+b=a
+
+operands are of two types:
+->column
+->literals: the actual value of the expression.
+*literals of three types :
+**numbers--eg:544
+**characters--its a case sensitive and should pass in single ' '.
+**date--pass in single ' '.
+----------------------------------------------------------------------------------------------------------------
+-->ALIAS--------------------------------------------------------------------------------------------------------
+*Giving temp name to a table or column by using alias.
+*it often use to make the column name more readable(better readability).
+syntax=>select col_name as alias_name from table_name as alias_name;
+----------------------------------------------------------------------------------------------------------------
+-->DISTINCT-----------------------------------------------------------------------------------------------------
+* whenever we want a unique or non repeated value from a table a distinct keyword is use.
+*if more than one arguments is pass to distinct it will remove the combination of column duplicate.
+syntax:SELECT DISTINCT COL_NAME FROM TABLE_NAME;
+----------------------------------------------------------------------------------------------------------------
+-->OPERATOR----------------------------------------------------------------------------------------------------
+*it is a reserved word or character used primarily in SQL statement.
+1.Arithmetic Operator-->  + , - , * , / , %
+2.Comparision Operator--> = , != , <> , > , >= , <=
+3.Logical Operator--> AND , NOT , OR
+**AND operator allows the existance of more than one conditon.If both the statements are true than only statement will executed.
+**If first condition  of OR condition is true the result will get true without evaluating the second condition.
+**  order of execution :NOT>AND>OR
+
+4.Special Operator--> IN ,BETWEEN,IS,LIKE
+** "in" operator is use for evaluating multiple values.
+** "not in" operator excludes all the values what ever pass for the condition.
+** "between" operator is use to define the range of values.
+** "is" operator is use to check the null value.If any record is null it will give TRUE otherwise it will give FALSE.
+** "like" operator is use for string pattern matching. 
+-->% = matches '0' to 'n' character.
+-->_ = matches exactly one character.
+----------------------------------------------------------------------------------------------------------------
+-->FUNCTIONS---------------------------------------------------------------------------------------------------
+->A function is a block of code which performs some specific task.
+->FUNCTION ATTRIBUTES has input argument and return type.
+->Sql has some predefined functions i.e Scalar function (single row function) and Aggregate function (multiple row function).
+**in aggregate function multiple inputs get pass to the function and get single result as output.
+-->AVG()
+-->COUNT()
+-->MAX()
+-->MIN()
+-->SUM()  
+
+** in scalar function  multiple inputs with multiple outputs
+-->UPPER()
+-->LOWER()
+-->INITCAP()
+-->LENGTH()
+-->CONCAT()-concatinate two string.
+-->REVERSE()
+-->SUBSTR()
+-->INSTR()
+-->REPLACE()
+
+**Scalar function is divided into two parts
+1.case manipulation:this contains 3 commands
+-UPPER()
+-LOWER()
+-INITCAP()
+2.character manipulation
+-LENGTH()
+-CONCAT()
+-REVERSE()
+-SUBSTR()
+-INSTR()
+-REPLACE()
+
+**SUBSTR - it is a function use to extract a string from a string. it accept three arguments.
+syntax-substr(string,position,length);
+string:a string from which we will get new string(substring)
+position:it is a number which specify a position of a string.
+Length:it specify the length of a new string from the position. 
+
+**instr- it is use to check a substring is present in a given string or not.If the substring is 
+	not present then it will return 0 otherwise return position of that substring.
+syntax:instr(string,substring);
+string:it is string in which a substring to be search.
+substring: substring which has to be search.
+
+**replace-it is use to replace a character or string in a given string.
+syntax: replace(string,substring1(origunalString),substring2(replaceString));
+NOTE: There are many other Scalar and aggregate functions present.
+
+-->GROUP BY clause----------------------------------------------------------------------------------------------- 
+**group by clause is use to grouping the same category or same identity.
+** this statement is often used with aggregation function (COUNT,MAX,MIN,SUM,AVG).
+**it executes row by row. After the execution of groupby the result is represent in group,therefore all the clause will
+   execute after the execution of group by clause.
+**order of execution:from > where > group by > select(aggregate Function).
+syntax:SELECT col_name FROM table_name WHERE condition GROUP BY col_name.
+---------------------------------------------------------------------------------------------------------------
+-->HAVING clause------------------------------------------------------------------------------------------------ 
+** having clause is often used  with the group by clause to filter groups based on a specified condition.
+**in this clause we can use only use an col i.e. used in group by clause.
+** having clause executes after the execution of GROUP BY clause therefore it checks the condition after grouping.
+** since it executes after executing having clause will executes group by group.
+syntax: SELECT col_name FROM table_name WHERE condition GROUP BY col_name HAVING condition.
+order of execution: from > where > group by > having >select(aggregate Function).
+------------------------------------------------------------------------------------------------------------------
+-->ORDER BY caluse--------------------------------------------------------------------------------------------------
+** Order by clause is use to sort the order in ascending or descending the resultset either number of ascending or descending order.
+** by default it is ascending.
+** this clause always executes after the selects execution.
+** order by clause should be the last clause to be return in the syntax.
+**
+
+syntax: SELECT col_name FROM table_name ORDER BY col_name ASC|DESC;
+order of execution: from > where > select > order by.
+
+===================================================================================================================
+*******when we use clause like group by , having and order by the order of execution will be 
+----->from > where > group by > having > select > order by
+===================================================================================================================
+-->SUBQUERY-------------------------------------------------------------------------------------------------------
+** A query inside a query is known as subquery which is also known as nested query and inner query.
+** subquery is another way to fetch a data from multiple table.
+** subquery must be enclosed in parenthese
+** always inner query will executed first.
+** the result of inner query will treated as input for outer query.
+** at last outer query give the final result by using the inner query.
+
+#####################################################################################
+WHEN TO USE SUBQUERY IN WHERE CLAUSE.
+1. If the given condition has an unknown value then we use subquery to get the unknown value.
+2. If the column to be selected and the condition to be filtered a given for two different table we can use a subquery.
+##################################################################################### 
+
+Two types of subquery:
+1.Single row subquery.
+** When the inner query gives single output and that output is used by the outer query by the help of relational operator. 
+syntax: SELECT col_name.... FROM table_name WHERE col_name operator (SELECT col_name FROM table_name WHERE exp1=value);
+2. Multi row subquery
+** When the inner query gives any number of output and that output is used by the outer query by the help of 'IN' operator. 
+syntax: SELECT col_name.... FROM table_name WHERE col_name operator (SELECT col_name FROM table_name WHERE exp1=value);
+-------------------------------------------------------------------------------------------------------------------
+-->JOINS-----------------------------------------------------------------------------------------------------------
+**Merging of more than one tables horizantally is known as Join.
+** Minimum required condition for joining table is atleast  number of table should be two.
+Type of joins:
+1.CROSS JOIN: In cross join a record table is merged with each and every record of a table. OR join two table a record from left table
+	        is merged with each and every record of right table is known as cross or cartesian join.
+	        syntax: SELECT col_name_list FROM table_name1 CROSS JOIN table_name1;
+	        
+
+2.INNER JOIN: Joining two tables with the help of join colomn is known as inner join.
+	        Syntax: select * from table1_name inner join table2_name on condition;(support for mySql)
+		      select * from table1_name , table2_name where condition;(Oracle).
+
+3.OUTER JOIN
+i.left outer join:Left outer join gives inner join + unmatched record(a record which does not have pair in the opposite table with respect to
+	       join) of left table; 
+	       syntax: select * from table1_name left outer join table2_name on condition.
+		    select * from table1_name table2_name where table1.colname = table2.colname(+);(Oracle)
+ii.right outer join:Right outer join gives inner join + unmatched record(a record which does not have a pair in the opposite table with respect 
+	         to join) of right table.
+	         syntax: select * from table1_name right outer join table2_name on condition.
+		       select * from table1_name table2_name where table1.colname(+) = table2.colname;(Oracle)
+iii.full outer join: The full outer join if inner join as well as all the record of both the table who do not have any pair.Usually we have not any
+	         syntax for this full outer join.But we can achieve but using 'union' keyword.
+	         syntax:select * from table1_name left outer join table2_name on table1_name.col_name= table2_name.col_name union
+		      select * from table1_name right outer join table2_name on table1_name.col_name= table2_name.col_name
+------------------------------------------------------------------------------------------------------------------------
+
+-->KEY TO ATTRIBUTES----------------------------------------------------------------------------------------------------
+
+Key attributes       : Key Attributes is use to find an attribute using which we can uniquely determine the record in the table.
+Non-Key Attributes : All the attributes except key attributes are known as Non-Key-Attributes. 
+Prime Key Attributes: Key attributes which is chosen to be a main attributes(property) to determine the record uniquely in the table is known 
+		  as prime key attributes.
+Non-Prime Key Attributes: All the attributes except prime key attributes are known as non prime key attribute.
+Composite Key 	 : Combination of two or more attribute which determine the record uniquely.
+Foreign Key : This key is use to relate two tables.The table in which foreign key is present is known as Child table and the table where
+	     Primary key key is called Parent table.Here, in foreign key colomn null and duplicates values are accepted.
+-------------------------------------------------------------------------------------------------------------------------
+
+-->FUNCTIONAL DEPENDENCIES----------------------------------------------------------------------------------------------
+In a functional dependencies the relation exist such that an attribute determine another attribute uniquely.
+For example, a={x,y} where x and y are two attributes. x->y , x is a determinant and y is dependent in which y is dependent on x .
+
+Type of Functional Dependencies:-
+1. Total Functional Dependencies  - If all the attributes of a relation is determined by a key attribute is known as total functional dependencies.
+			       Example: R1->{a,b,c,d} where R1 is a relation and a->b,c,d (b,c,d are fully dependent on a).
+2. Partial Functional Dependencies - The relation is said to have a partial functional dependendies if 
+			       i. It consits of composite key.
+			      ii. There exists an dependency such that an attribute can be determine by another attribute which 
+			          is part of a composite key.
+			          Example: R1->{a,b,c,d} (a,b)->c,d where c and d are partially dependent on a,b.
+3. Transitive Functional Dependencies - If relation is said to be a transitive function if there exists a relation such that an attribute is
+			           determine non-key attribute which intern detrermine by key attribute.
+			           Example: R1->{a,b,c,d} 
+				          a->b
+				          b->d
+				          a->d, where b is dependent on a, d is dependent on b.In that way d is dependent on a.
+------------------------------------------------------------------------------------------------------------------------
+
+-->NORMALIZATION-------------------------------------------------------------------------------------------------------
+1.Data Redundancy
+2.Anomaly : Side effects on DML operation are anomaly like insertion, deletion.
+The process of decomposing the table into smaller table in order to remove data redundancy and anomaly is called normalization.
+			OR
+The process of decomposing a table into a normal form is called normalization.
+
+Normal Form- A state of table without any redundancy and anomaly is called normal form.
+
+Types of Normal Form:
+1. 1NF
+2. 2NF
+3. 3NF
+4. BCNF
+5. 4NF
+
+1. 1NF : A table is said to be a 1NF if it satisfy the following condition.
+	i. Table should not have duplicate row.
+	ii.Every table should have atomic values.
+
+2. 2NF :  A table is said to be a 2NF if they follow following condition:
+	i. Should follow 1NF.
+	ii.Should not have partial functional dependencies(Should not have composite Key).
+NOTE: If the table have partial functional dependencies the attributes which are responsible are remove from the table.
+
+3. 3NF : A table is said to be 3NF if the following conditions are satisfy:
+	i. It should follow the 2NF.
+	ii. The table should not have transitive functional dependencies.
+NOTE: 1NF, 2NF and 3Nf are based on key attributes and functional dependency of relational schema.
+-------------------------------------------------------------------------------------------------------------------------
+
+-->ER Diagram-------------------------------------------------------------------------------------------------------------
+ER- diagram describes their structure of database with the help of diagram which is known as the ER-Diagram.It is the blueprint 
+of the database that can be later use to implement the database.
+
+Components of ER-Diagram
+
+1.Entity -- repesent by rectangle (If u want to declare primary key underline it).
+	
+2.Attribute -- represent by ellipse
+3.Relationship -- represent by diamond
+
+*Attributes and entity are connected by a single line. 
+*Relation can be one to one , one to many , many to one and many to many.
+
+-->VIEW-------------------------------------------------------------------------------------------------------------------
+* View are logical or virtual table that can be created in existing table.
+* View does not occupy memory in the table.
+syntax: create view view_name as select * from table_name;
+NOTE: Any DML operation performed on view the base table will got reflected.
+----------------------------------------------------------------------------------------------------------------------------
+
+-->STORED PROCEDURE------------------------------------------------------------------------------------------------------------
+A stored procedure is a collection or a group of sql statement , stored in the database's data dictionary and called from either a remote program ,
+another stored procedure.
+syntax:   DELIMITER$$
+            Create procedure <procedure Name>
+	As
+	Begin
+	<SQL Statement>
+	End$$
+	DELIMITER;
+------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------******************************--------------------------------------------------------------

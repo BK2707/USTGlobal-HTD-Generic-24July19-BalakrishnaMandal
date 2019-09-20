@@ -1,0 +1,34 @@
+table, th, td{
+    /*border: 1px solid black;
+    border-collapse: collapse;*//*IN order to remove the border */
+    text-align: center;
+    padding: 7px;
+    border-radius: 50px;
+    font-size: 25px;
+    
+    
+}
+table{
+    width:100%;
+}
+th{
+    background-color: black;
+    color: white;
+
+}
+tr:nth-child(even){
+    background-color:olivedrab;
+
+}
+tr:nth-child(odd){
+    background-color:burlywood;
+    
+}
+td:hover{
+    background-color: brown;
+    color:white;
+
+}
+td{
+    font-family: cursive;
+}

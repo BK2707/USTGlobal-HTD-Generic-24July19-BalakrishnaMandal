@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form1</title>
+    <link rel="stylesheet" href="form1.css">
+</head>
+<body>
+    <form name= 'myform' action="">
+        <div>
+            <label for="fname">First Name</label><br>
+            <input onkeyup="validate()" type="text" name="fname" id="fname">
+        </div>
+        <div id="fnameerror"></div>
+        <br>
+        <div>
+            <label for="lname">Last Name</label><br>
+            <input onkeyup="validate()" type="text" name="lname" id="lname">
+        </div>
+        <div id="lnameerror"></div>
+        <br>
+        <div>
+            <label for="cname" >Company Name </label><br>
+            <input type="text" name="cname" id="cname">
+        </div>
+        <div id="cnameerror"></div><br>
+        <div>
+            <label for="empid">Emp ID</label><br>
+            <input type="number" name="empid" id="empid">
+        </div>
+        <div id="empiderror"></div><br>
+        <div>
+            <label for="doj">Date of joining</label><br>
+            <input type="date" name="doj" id="doj">
+        </div><br>
+        <div>
+            <label for="gend">Gender</label><br>
+            <input type="radio" name="gend" id="gend">Male
+            <input type="radio" name="gend" id="gend">Female
+            <input type="radio" name="gend" id="gend">Others
+        </div><br>
+        <div>
+            <label for="skill">Skills</label><br>
+            <input type="checkbox" name="skill" id="skill">Java <br>
+            <input type="checkbox" name="skill" id="skill">SQL <br>
+            <input type="checkbox" name="skill" id="skill">J2EE <br>
+            <input type="checkbox" name="skill" id="skill">Hibernate
+        </div><br>
+        <div>
+            <input type="submit" value="SUBMIT">
+            <input type="reset" value="RESET">
+        </div>
+        
+    </form>
+    <script src="form1.js"></script>
+</body>
+</html>

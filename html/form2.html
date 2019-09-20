@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form2</title>
+    <link rel="stylesheet" href="form2.css">
+</head>
+<body>
+    <h1>Customer Details: </h1>
+    <div>
+        <label for="name">Full Name  *</label><br><br>
+        <input type="text" name="fname" id="fname" required>
+        <input type="text" name="lname" id="lname" required><br>
+        <label for="fname">First Name</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;
+        <label for="lname">Last Name</label>
+    </div><br>
+    <div>
+        <label for="add">Address  *</label><br><br>
+        <input type="text" name="add1" id="add" required><br>
+        <label for="add">Street Address</label><br><br>
+        <input type="text" name="add2" id="add" required><br>
+        <label for="add">Street Address line2</label><br>
+    </div><br>
+    <div>
+        <input type="text" name="city" id="city">&emsp;
+        <input type="text" name="State" id="state"><br>
+
+        <label for="city">City</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        <label for="State">State/Province</label>
+    </div><br>
+    <div>
+        <input type="number" name="pin" id="pin">&emsp;
+        <select name="Please Select" id="country">
+            <option value="select"selected disabled>Please Select</option>
+            <option value="Ind">India</option>
+            <option value="Pak">Pakistan</option>
+            <option value="Sl">Srilanka</option>
+            <option value="Ban">Bangladesh</option>
+            <option value="Afg">Afganistan</option>
+            <option value="Ch">China</option>
+            <option value="Nep">Nepal</option>
+            <option value="Bhu">Bhutan</option>
+            <option value="Mal">Malaysia</option>
+        </select><br>
+        <label for="pin">PinCode/Postal Zip</label>&emsp;&emsp;&emsp;&emsp;
+        <label for="country">Country</label>
+    </div><br>
+</body>
+</html>

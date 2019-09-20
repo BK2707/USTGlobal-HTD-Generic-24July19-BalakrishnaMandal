@@ -1,0 +1,32 @@
+<h1 class="bg-danger text-center"><i>Structural Directive(*ngFor)</i></h1>
+
+        <ul class="list-group col mt-5">
+            <li class="list-group-item bg-warning" *ngFor='let user of users'>{{user.name}}</li>
+        </ul>
+
+<div class="container">
+<div *ngIf = 'condition' class="alert alert-success">User is removed sucessfully!!
+        <button  type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+        </button>
+</div>
+<table class="table  mt-5 table-bordered table-hover">
+    <thead class="thead-dark text-center">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody class=" bg-danger text-center ">
+        <tr *ngFor='let user of users'>
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.city}}</td>
+            <td><button class="btn btn-outline-dark bg-success" (click)="removeUser(user)">Remove</button></td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<!-- ***************************************************************************************************** -->

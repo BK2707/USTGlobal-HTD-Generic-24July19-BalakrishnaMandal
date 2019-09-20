@@ -1,0 +1,10 @@
+<div class="col-md-4 offset-4 card card-body mt-5">
+    <input type="text"[(ngModel)]="dataFromInput" class="form-control"
+    (keyup)='buttonEvent=(dataFromInput)'>
+</div>
+<!-- <h1 class = 'text-center'>{{dataFromInput}}</h1> -->
+<!-- <img src="{{dataFromInput}}" alt=""> -->
+<button class="btn btn-primary"  (click)='buttonEvent(dataFromInput)'>GIVE ALERT</button>
+<h1 class="text-center" [style.background]='backgroundColor'>Event and Property Binding</h1>
+<button class="btn btn-primary"  (click)='changeColor()'>changeColor</button>
+<button class="btn btn-primary"  (click)='changeColorByInput(dataFromInput)'>CHANGE</button>

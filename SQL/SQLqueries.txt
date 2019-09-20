@@ -1,0 +1,486 @@
+
+					QUERIES
+
+				**********DDL*************
+
+--> to create database------------------------------------------------------------
+1.mysql> create database UST;
+
+--> to check database-------------------------------------------------------------		
+2.mysql> show databases;
+
+--> to enter to the database--------------------------------------------------------			
+3.mysql> use ust;
+
+--> to check any data is present-----------------------------------------------------				
+4.mysql> show tables;
+
+-->in order to create a table--------------------------------------------------------			
+5.mysql> create table employee(
+            id int,name varchar(20),
+            emailId varchar(20));
+
+-->To check the structure of the table--------------------------------------------------------			
+6.mysql> desc employee;  
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| id        | int(11)     | YES  |     | NULL    |       |
+| name    | varchar(20) | YES  |     | NULL    |       |
+| emailId | varchar(20) | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+
+-->To drop the table in the database----------------------------------------------------
+7.mysql> drop table employee;
+
+-->To drop the table in the database----------------------------------------------------
+7.mysql> drop table employee;
+
+-->to drop the database--------------------------------------------------------------
+8. mysql> drop database ust;
+
+-->to add col in a table--------------------------------------------------------------
+9.mysql> alter table employee add column mobile int;
+10.mysql> alter table employee add address varchar(20);
+
+-->to drop col in a table--------------------------------------------------------------
+11.mysql> alter table drop address;
+
+-->to rename the col name--------------------------------------------------------------
+12.mysql> alter table employee change emp_name name varchar(20);
+
+-->to rename table name--------------------------------------------------------------
+13.mysql> rename table employee to emp_info;
+
+
+			************DML**************
+-->to insert data into the table--------------------------------------------------------------
+1.mysql> insert into emp_info values (102,'Raj','raj@gmail.com',9789625);
+
+-->to insert multiple data into the table--------------------------------------------------------------
+2.mysql> insert into emp_info values (102,'Raj','raj@gmail.com',9789625),(103,'Amit','amit@gmail.com',94789625),(103,'Rajesh','rajesh@gmail.com',9789625);
+
+-->to check data in the table-----------------------------------------------------------------------------------------
+3.select * from emp_info;
+
+-->to update col data in the table-------------------------------------------------------------------------------------
+4.update emp_info set mob =88757454;
+
+-->to delete data in the table-----------------------------------------------------------------------------------------
+5.mysql> delete from emp_info;
+
+-->to delete data in the table(using Turncate)-----------------------------------------------------------------------------------------
+6.mysql> truncate table emp_info;
+
+
+					********DQL**********
+-->to get particular data from table-----------------------------------------------------------------------------------
+1.mysql> select emp_id,name from emp_info;.
+
+-->where clause--------------------------------------------------------------------------------------------------
+1.mysql> select * from emp_info where name='Raja';
+2.mysql> update emp_info set mob=987769949 where name='Raja';
+3.mysql> delete from emp_info where emp_id =102;
+
+-->ALIAS--------------------------------------------------------------------------------------------------------
+1.mysql>select blood_group as bg from employee_info;
+
+
+===========================================QUERIES================================================================
+Q1. write a query to get id and name from emp table where emp name is 'Raja'.
+mysql> select emp_id , name from emp_info where name='Raja';
+
+Q2. write a query to get emp_name, designation and his annual salary.
+mysql> select name, designation,salary*12 as annual_salary from employee_info;
+
+Q3.write a query to give the alias name for all the columns present in the employee_info table.
+mysql> select id Id,name nm,designation desig,mobile mob,age ag,dob b,doj joining,salary sal,deptId d_id, blood_group bg from employee_info;
+
+Q4. write a query to display unique dept_id from dept_id from the table.
+mysql> select distinct deptId from employee_info;
+
+Q5.write a query to display designation as well as dept_id.
+mysql> select distinct deptId, designation from employee_info;
++--------+--------------------+
+| deptId | designation       	         |
++--------+--------------------+
+|     10 | Software Developer          |
+|     20 | HR                 	         |
+|     30 | Clerk              	         |
+|     40 | Salesman           	         |
+|     50 | Tester             	         |
+|     60 | Analyst            	         |
++--------+--------------------+
+
+Q6.write a query to display designation,dept_id,age.
+mysql> select distinct deptId, designation,age from employee_info;
++--------+--------------------+------+
+| deptId | designation        		| age  |
++--------+--------------------+------+
+|     10 | Software Developer 	|   22 |
+|     10 | Software Developer 	|   21 |
+|     20 | HR                 		|   21 |
+|     20 | HR                 		|   23 |
+|     20 | Clerk              		|   22 |
+|     20 | Clerk              		|   24 |
+|     20 | Clerk              		|   23 |
+|     40 | Salesman           		|   25 |
+|     40 | Salesman           		|   23 |
+|     50 | Tester             		|   22 |
+|     50 | Tester             		|   24 |
+|     60 | Analyst            		|   26 |
+|     60 | Analyst            		|   27 |
++--------+--------------------+------+
+
+
+Q7. write a query to display name, salary and salary increase by 5000;
+mysql> select name , salary ,salary+5000 as increased_salary from employee_info;
++---------+--------+------------------+
+| name    	| salary 		| increased_salary |
++---------+--------+------------------+
+| Bala    	|  35000 		|            40000 |
+| Krishna  |  30000 		|            35000 |
+| Karan    |  40000 	|            45000 |
+| Sameer  |  38000 	|            43000 |
+| Ram     |  45000 		|            50000 |
+| Ganesh  |  50000 		|            55000 |
+| Raja    |  30000 		|            35000 |
+| Rajesh  |  25000 		|            30000 |
+| Aastha  |  27000 		|            32000 |
+| Rajesh  |  60000 		|            65000 |
+| Anita   |  50000 		|            55000 |
+| Harish  |  30000 		|            35000 |
+| Kajal   |  50000 		|            55000 |
+| Anisha  |  80000 		|            85000 |
+| Harsha  |  75000 		|            80000 |
++---------+--------+------------------+
+
+Q8. write a query to display name, salary and salary decrease by 5000;
+mysql> select name , salary ,salary-5000 as decreased_salary from employee_info;
++---------+--------+------------------+
+| name    | salary 	           | decreased_salary |
++---------+--------+------------------+
+| Bala    |  35000 		|            30000 |
+| Krishna |  30000 		|            25000 |
+| Karan   |  40000	 	|            35000 |
+| Sameer  |  38000 	|            33000 |
+| Ram     |  45000 		|            40000 |
+| Ganesh  |  50000 		|            45000 |
+| Raja    |  30000 		|            25000 |
+| Rajesh  |  25000 		|            20000 |
+| Aastha  |  27000 		|            22000 |
+| Rajesh  |  60000 		|            55000 |
+| Anita   |  50000 		|            45000 |
+| Harish  |  30000 		|            25000 |
+| Kajal   |  50000 		|            45000 |
+| Anisha  |  80000 		|            75000 |
+| Harsha  |  75000 		|            70000 |
++---------+--------+------------------+
+
+Q9. write a query to display name, salary and annual salary ;
+mysql> select name , salary ,salary*12 as annual_salary from employee_info;
++---------+--------+---------------+
+| name    | salary 		| annual_salary |
++---------+--------+---------------+
+| Bala    |  35000 		|        420000 |
+| Krishna |  30000 		|        360000 |
+| Karan   |  40000 		|        480000 |
+| Sameer  |  38000 	|        456000 |
+| Ram     |  45000 		|        540000 |
+| Ganesh  |  50000 		|        600000 |
+| Raja    |  30000 		|        360000 |
+| Rajesh  |  25000 		|        300000 |
+| Aastha  |  27000 		|        324000 |
+| Rajesh  |  60000 		|        720000 |
+| Anita   |  50000 		|        600000 |
+| Harish  |  30000 		|        360000 |
+| Kajal   |  50000 		|        600000 |
+| Anisha  |  80000 		|        960000 |
+| Harsha  |  75000 		|        900000 |
++---------+--------+---------------+
+
+Q10. write a query to display name, salary and salary per day;
+mysql> select name , salary ,salary/30 as per_day_salary from employee_info;
++---------+--------+--------------------+
+| name    | salary 		| per_day_salary     |
++---------+--------+--------------------+
+| Bala    |  35000 	        | 1166.6666666666667 |
+| Krishna |  30000 	              |               1000 |
+| Karan   |  40000 	        | 1333.3333333333333 |
+| Sameer  |  38000         | 1266.6666666666667 |
+| Ram     |  45000                 |               1500 |
+| Ganesh  |  50000 	         | 1666.6666666666667 |
+| Raja    |  30000 		   |               1000 |
+| Rajesh  |  25000 	         |  833.3333333333334 |
+| Aastha  |  27000                 |                900 |
+| Rajesh  |  60000                 |               2000 |
+| Anita   |  50000           | 1666.6666666666667 |
+| Harish  |  30000                 |               1000 |
+| Kajal   |  50000           | 1666.6666666666667 |
+| Anisha  |  80000          | 2666.6666666666665 |
+| Harsha  |  75000                |               2500 |
++---------+--------+--------------------+
+
+Q11. write a query to get the remainder when 10%3 and give name as modu.
+mysql> select 10%2 as modu;
+
+Q12.write a query to display all the records excluding depId=10.
+mysql> select * from employee_info where deptId != 10;
+
+Q13.write a query to display name,designation, mobile number, age whose salary is greater than 50000.
+mysql> select name,designation, mobile from employee_info where salary>50000;
+
+Q14.write a query to display name,designation, mobile number, age whose salary is lesser than 50000.
+mysql> select name,designation, mobile from employee_info where salary<50000;
+
+Q15.write a query to display name and salary whose salary is greater or equals to 45000.
+mysql> select name,salary from employee_info where salary>=45000;
+
+Q16.write a query to display name,salary whose salary is lesser or equals to 45000.
+mysql> select name,salary from employee_info where salary<=45000;
+
+Q17.write a query to display all the record who is working in dept_id = 20 only if salary is greater than 40000.
+mysql> select * from employee_info where deptId=20 and salary>40000;
+
+Q18.write a query to display all the record  of emp table who is working as salesman and date of birth is 1994.
+select * from employee_info where designation = 'salesman' and dob='1994';
+
+Q19. write a query to display all the records of employee table whose salary is > 75000 as well as job desig is analyst.
+mysql> select * from employee_info where salary > 75000 and designation = 'analyst';
+
+Q20. write a query to display all the records who is working in dept 20 or dept 70.
+mysql> select * from employee_info where deptId = 20 or deptId = 70;
+
+Q21. write a query to display name, sal, email who is working as a tester or age > 20.
+mysql> select name,emailId,salary from employee_info where designation = 'tester' or age > 20;
+
+Q22.write a query to display name of all employee who is working as a hr in dept 30 or who working as clerk where sal >10000.
+mysql> select name from employee_info where designation = 'hr' and deptId = 30 or designation = 'clerk' and salary>10000;
+** here first and operator is executed then or operator is executed.
+
+Q23. write a query to display salary =10k and designation = 'software dev'.
+mysql> select * from employee_info where salary>10000 and designation = 'software developer';
+
+Q24. write a query to display who is not a software developer.
+mysql> select * from employee_info where not designation = 'software developer';
+mysql> select * from employee_info where  designation != 'software developer';
+mysql> select * from employee_info where  designation <> 'software developer';
+
+Q25. write a query to display all the employee excluding dep 20 or dep 30.
+mysql>  select * from employee_info where not (deptId = 20 or deptId= 30);
+
+Q26. write a query to display all employee details excluding salesmen who r working dept 40.
+mysql>  select * from employee_info where not (designation = 'salesman' and deptId=40);
+
+Q27. write a query to display all the employee details who is working as a salesmen for dept 20 or 30.
+mysql>  select * from employee_info where designation =  'salesman' and (deptId = 20 or deptId =30);
+
+Q28. write a query to display all the employee details who is working in dep=30  only if their sal is > 10000 and <25000 including 10k and 25K. 
+mysql> select * from employee_info where deptId = 30 and (salary>=10000 and salary<=25000);
+
+Q29. write a query to display all the employee details who is working as a software dev and dob in 1994.
+mysql> select * from employee_info where designation='software developer' and (dob>'1993-12-31' and dob<'1995-01-01');
+ 
+Q30. write a query to display the employee who is working in dep 10 or 20 or 30.
+mysql> select * from employee_info where deptId =10 or deptId=20 or deptId=30 ;
+mysql> select * from employee_info where deptId in (10,20,30) ;
+
+Q31. write a query to display all the employee details whose job designation is tester , hr and analyst.
+mysql> select * from employee_info where designation in ('tester','hr','analyst') ;
+
+Q32. write a query to display all the employee details who are working as a clerk in dept 20,30,40,60,70.
+mysql> select * from employee_info where designation = 'clerk' and deptId in (20,30,40,60,70) ;
+
+Q33. write a query to display all the employee details who are working as a clerk but not in dept 20,40,60,70.
+mysql> select * from employee_info where designation = 'clerk' and deptId  not in (20,40,60,70) ;
+
+Q34. write a query to display all the employee details who are working in dep 20 ,30,60 excluding the salesmen  or analyst.
+mysql> select * from employee_info where deptId in (20,30,60) and designation not in ('salesman','analyst');
+
+Q35.write a query to display all the employee details whoes salary in the range of 20k to 50K.
+mysql> select * from employee_info where salary between 20000 and 50000;
+
+Q36.write a query to display all the employee details who heired in 2017.
+mysql> select * from employee_info where doj between '2017-01-01' and '2018-01-01';
+
+Q37.write a query to display all the employee details excluding who is hiered in 2019.
+mysql> select * from employee_info where doj not  between '2019-01-01' and '2020-01-01';
+
+Q38.write a query to display employee name, salary, dep of all employee who is working on depId
+   10 or 20 excluding employee whoes sal>=15k and sal<=50k
+mysql> select name,deptId, salary from employee_info where deptId in (10,20) and salary not between 15000 and 50000;
+
+Q39.write a query to display employee name,annual sal if its deptId is null.
+mysql> select name, salary*12 as annual_salary from employee_info where deptId is null;
+
+Q40.write a query to display employee name,annual sal if its deptId is not null.
+mysql> select name, salary*12 as annual_salary from employee_info where deptId is  not null;
+
+Q41.write a query to display all details of employee whoes name is starting with s.
+mysql> select * from employee_info where name like 's%';
+
+Q42.write a query to display all details of employee whoes name contains only 5 characters.
+mysql> select * from employee_info where name like '_____';
+
+Q43. write a query to display name, salary, DOB,DOJ, age whose name starts with s and ends with s.
+mysql> select name, salary, dob,doj,age from employee_info where name like 's%s';
+
+Q44.write a query to display all the records of the employee whoes name second character is a.
+mysql> select * from employee_info where name like '_a%';
+
+Q45.write a query to display all the records of the employee where designstion has atleast ee.
+mysql> select * from employee_info where designation like '%e%e%';
+
+Q46.write a query to display all the records of the employee where name all the strings of length 5 ,
+ the name starts with s and second last of that string is l.
+mysql> select * from employee_info where name like 's__l_';
+
+Q47.write a query to display all the records of the employee if the name of the employee starts with r charcter or starts with z character.
+mysql> select * from employee_info where name like 'r%' or name like 'z%';
+
+Q48.write a query to display all the records of the employee whose name third char should be c and 6th char should be i.
+mysql> select * from employee_info where name like '__c__i%';
+
+Q49.write a query to display all the records of the employee excluding whose name starts with a.
+mysql> select * from employee_info where name not like 'a%'; 
+
+Q50. write a query to display avg salary,min salary, max salary, sum of salary of employee and count of number of employee.
+mysql>  select avg(salary) as average salary from employee_info;
+
+mysql>  select min(salary) as minimum_salary from employee_info;
+
+mysql>  select max(salary) as maximum_salary from employee_info;
+
+mysql>  select sum(salary) as sumOf_salary from employee_info;
+
+mysql>  select count(id) as Numof_employee from employee_info;
+
+Q51. write a query to display number of employee had doj after 2016.
+mysql> select count(name) from employee_info where doj > '2016-12-31';
+
+Q52. write a query to display lowest and highest salary of dept 20,30,40,60.
+mysql> select min(salary), max(salary) from employee_info where deptId in (20,30,40,60);
+
+Q53. write a query to display date of first and last hired employee.
+mysql> select min(doj) as first_hired, max(doj) as last_hired from employee_info;
+
+Q54. write a query to display name as capitalize manner and also name in lower case.
+mysql> select upper(name) from employee_info;
+mysql> select lower(name) from employee_info;
+mysql> select initcap(name) from employee_info;(THIS COMMAND NOT WORKS IN MYSQL BUT SUPPORT IN ORACLE)
+
+Q55. write a query to display length of name string. 
+mysql> select length(name) from employee_info;
+
+Q56. write a query to merge name and salary.
+mysql> select concat(name , salary) from employee_info;
+
+Q57.  write a query to reverse the name.
+mysql> select reverse(name) from employee_info;
+
+Q58.  write a query to display a name only three character.
+mysql> select substr(name,1,3) from employee_info;
+
+Q59.  write a query to display all the details of the employee whoes name begin with consonat.
+mysql> select * from employee_info where substr(name,1,1) not in('a','e','i','o','u');
+
+Q60. write a query to display 'a' position in name string.
+mysql> select instr(name,'a') from employee_info;
+
+Q61. write a query to replace letter 'a' with 'z' in name column.
+mysql> select replace(name,'a','z') from employee_info;
+
+Q62. write a query to display number of employee who working in dep 20 and salary = 45,000.
+mysql> select count(*) from employee_info where deptId=20 and salary=45000;
+
+Q63.write a query to display highest salary in each department.
+mysql> select max(salary) from employee_info group by deptId;
+
+Q64.write a query to display number of software developer working in each dept.
+mysql> select count(*) from employee_info where designation = 'software developer' group by deptId;
+
+Q65.write a query to display number of employee hiered on each date.
+mysql> select count(*) from employee_info group by doj;
+
+Q66.write a query to display minimum salary of employee in each designation;
+mysql> select min(salary) from employee_info group by designation;
+
+Q67.write a query to display dept id which has atleast 4 working employees.
+mysql> select count(*) from employee_info group by deptId having  count(*)>4;
+
+Q68.write a query to display dept no. which has total salary> 120k.
+mysql> select deptId from employee_info group by deptId having sum(salary)>120000;
+
+Q69.write a query to display deptId and avg sal of all the dept whoes avg sal > 20k excluding the employee whoes name begins with s.
+mysql> select deptId, avg(salary) from employee_info where name not like 's%' group by deptId having avg(salary)>20000;
+
+Q70. write a query to display deptId and designation in group by.
+mysql> select deptId,designation from employee_info group by deptId , designation;
+
+Q71. write a query to display all the results of employee_info salary should be arrange in descending order.
+mysql> select * from employee_info order by salary desc;
+
+Q72. write a query to display all the results of employee_info salary should be arrange in ascending order.
+mysql> select * from employee_info order by salary;
+
+Q73. write a query to display employee name , designation , DOJ for all the employee who are working on  either dep 10,20,60, 50
+    and sort the records in desc of their salary.
+mysql> select name, designation, doj from employee_info where deptId in (10,20,60,50) order by salary desc;
+
+Q74. write a query to display deptId along with number of employee in it.
+mysql> select deptId, count(*) from employee_info group by deptId;
+
+Q75. write a query to display all the details of employee whoes designation is testor and software developer.
+SELECT * from employee_info where designation in ('tester','software developer');
+
+Q76. write a query to display name of the employee who is working for research department.
+SELECT name from employee_info where deptId = (select deptid from department_info where dname = 'research');
+
+Q77. write a query to display the name of the employee who is working in location which has atleast one 'a' character in its name.
+SELECT name from employee_info where deptId in (SELECT deptid from department_info where location like '%a%')
+
+Q78. write a query to obtain second max salary from the employee_info.
+SELECT max(salary) from employee_info where salary < (SELECT max(salary) from employee_info);
+
+Q79. write a query to obtain third max salary from the employee_info.
+SELECT max(salary) from employee_info where salary < (SELECT max(salary) from employee_info where salary < (SELECT max(salary) from employee_info));
+
+Q80. write a query to display all the records using cross join.
+SELECT * from employee_info cross join department_info;
+
+Q81. write a query to display all the records of employee and department table using inner join.
+ select * from employee_info inner join department_info on employee_info.id = department_info.deptid;
+
+Q82. Write a query to display all the records of employee_info and the record of department_info which having the same id as employee_info table.
+ select * from employee_info left outer join department_info on employee_info.id = department_info.deptid;
+
+Q83. Write a query to display all the records of department_info and the record of department_info which having the same id as employee_info table.
+select * from department_info left outer join employee_info on employee_info.id = department_info.deptid;
+
+Q84. Full outer join
+select * from department_info left outer join employee_info on employee_info.id = department_info.deptid union select * from department_info left outer join employee_info on employee_info.id = department_info.deptid;
+
+ROLLBACK
+ rollback;
+
+AUTOCOMMIT
+ set autocommit = 0;
+
+SAVEPOINT
+savepoint a;
+
+STORED PROCEDURE
+DELIMITER $$
+
+CREATE
+  
+    PROCEDURE `ust_global`.`Test1`()
+    
+    BEGIN
+	select * from employee_info where designation = 'HR';
+
+    END$$
+
+DELIMITER ;
+
+-->call test1;

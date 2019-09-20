@@ -1,0 +1,94 @@
+ul
+{
+margin-top:100px ;
+margin-left:50px;
+}
+li
+{
+    display: inline-block;
+    background-color: black;
+    width: 50px;
+    height: 50px;
+    margin-left: 50px;
+    transform: scale(2,2);  /* in order to inc/dec the size by (n times of width  n times of length) */
+    
+}
+.l1
+{
+    display: inline-block;
+    background-color:blue;
+    width: 50px;
+    height: 50px;
+    margin-left: 50px;
+    transform: translate(50px, 100px);  /* in order to change the position towards (right bottom) */
+}
+.l2
+{
+    display: inline-block;
+    background-color: blueviolet;
+    width: 50px;
+    height: 50px;
+    margin-left: 50px;
+    transform: rotate(-45deg);  /* in order to rotate clockwise or anticlockwise according to (+||-) of deg */
+
+}
+.l3
+{
+    display: inline-block;
+    background-color: violet;
+    width: 50px;
+    height: 50px;
+    margin-left: 50px;
+    transform: scaleX(0.5);  /* in order to change size by width(0.5*original_size) */
+
+}
+.l4
+{
+    display: inline-block;
+    background-color:rgb(47, 37, 75);
+    width: 50px;
+    height: 50px;
+    margin-left: 50px;
+    transform: scaleY(0.5);  /* in order to change size by height(0.5*original_size) */
+
+}
+.l5
+{
+    display: inline-block;
+    background-color:rgb(123, 138, 187);
+    width: 50px;
+    height: 50px;
+    margin-left: 50px;
+    transform: skewX(20deg);  /* in order to skews by x-axis */
+
+}
+.l6
+{
+    display: inline-block;
+    background-color: rgb(63, 5, 44);
+    width: 50px;
+    height: 50px;
+    margin-left: 50px;
+    transform: skewY(20deg) ;  /* in order to skews by y-axis */
+
+}
+.l7
+{
+    display: inline-block;
+    background-color:rgb(85, 5, 5);
+    width: 50px;
+    height: 50px;
+    margin-left: 50px;
+    transform: skew(20deg 400deg);  /* in order to skew it by both (x-axis y-axis) */
+
+}
+.l8
+{
+    display: inline-block;
+    background-color: rgb(209, 28, 28);
+    width: 50px;
+    height: 50px;
+    margin-left: 50px;
+    transform: matrix(1, 0, 0.5, 1, 150, 0);  /* it follows the changes in matrix i.e, matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY()) */
+
+}

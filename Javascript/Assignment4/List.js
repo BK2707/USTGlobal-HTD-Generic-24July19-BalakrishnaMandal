@@ -1,0 +1,50 @@
+console.log('-----------------------------------');
+console.log('ordered list');
+console.log('-----------------------------------');
+
+let orderedList = document.createElement('ol');
+let list1 = document.createElement('li');
+list1.textContent = 'Orange';
+let list2 = document.createElement('li');
+list2.textContent = 'Apple';
+let list3 = document.createElement('li');
+list3.textContent = 'Pinapple';
+let list4 = document.createElement('li');
+list4.textContent = 'Coconut';
+let list5 = document.createElement('li');
+list5.textContent = 'Banana';
+let list6 = document.createElement('li');
+list6.textContent = 'Mango';
+
+orderedList.appendChild(list1);
+orderedList.appendChild(list2);
+orderedList.appendChild(list3);
+orderedList.appendChild(list4);
+orderedList.appendChild(list5);
+orderedList.appendChild(list6);
+document.body.appendChild(orderedList);
+
+console.log('-----------------------------------');
+console.log('Unordered list');
+console.log('-----------------------------------');
+let unorderedList = document.createElement('ul');
+let list11 = document.createElement('li');
+list11.textContent = 'Bala';
+let list22 = document.createElement('li');
+list22.textContent = 'Krishna';
+let list33 = document.createElement('li');
+list33.textContent = 'Amit';
+let list44 = document.createElement('li');
+list44.textContent = 'Keshav';
+let list55 = document.createElement('li');
+list55.textContent = 'Tarun';
+let list66 = document.createElement('li');
+list66.textContent = 'Amandeep';
+
+unorderedList.appendChild(list11);
+unorderedList.appendChild(list22);
+unorderedList.appendChild(list33);
+unorderedList.appendChild(list44);
+unorderedList.appendChild(list55);
+unorderedList.appendChild(list66);
+document.body.appendChild(unorderedList);

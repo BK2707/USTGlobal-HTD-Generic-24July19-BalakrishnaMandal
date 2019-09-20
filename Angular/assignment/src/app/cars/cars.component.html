@@ -1,0 +1,12 @@
+<div class=" card card-body col-md-6 offset-3 mt-4" style="background-color: rgb(143, 120, 120)">
+    <h2 class="text-center">Car Details Input!!</h2>
+    <form #userForm='ngForm' (ngSubmit)='postUser(userForm)'>
+        <input type="hidden" name="id" #id='ngModel' [(ngModel)] = 'firebaseService.selectedUser.id'>
+        <input type="text" name="brand" class="form-control mb-3 mt-3 text-center" #brand='ngModel' [(ngModel)]='firebaseService.selectedUser.brand' placeholder="BRAND">
+        <input type="text" name="model" class="form-control mb-3 mt-3 text-center" #model='ngModel' [(ngModel)]='firebaseService.selectedUser.model' placeholder="MODEL">
+        <input type="date" name="yor" class="form-control mb-3 mt-3 text-center" #yor='ngModel'  [(ngModel)]='firebaseService.selectedUser.yor' placeholder="YEAR OF RELEASE">
+        <input type="number" name="cost" class="form-control mb-3 mt-3 text-center" #cost='ngModel'  [(ngModel)]='firebaseService.selectedUser.cost' placeholder="COST OF A CAR">
+        <input type="number" name="sold" class="form-control mb-3 mt-3 text-center" #sold='ngModel'  [(ngModel)]='firebaseService.selectedUser.sold' placeholder="NUMBER OF UNITS SOLD">
+        <button class="btn btn-outline-danger btn-block">SUBMIT</button>
+    </form>
+</div>

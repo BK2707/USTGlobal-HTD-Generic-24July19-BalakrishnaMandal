@@ -1,0 +1,29 @@
+<body>
+        <div>
+                <div class="row">
+                        <div class="col-md-3 mt-2">
+                        <div class=" card card-body" *ngFor='let news of entertain'>
+                                <img src="{{news.urlToImage}}" alt="" class="card-img-top">
+                                <h3>{{news.title}}</h3>
+                                <p>{{news.description}}</p>
+                        </div>
+                </div>
+            <div class="col-md-6 mt-3">
+                    <div class=" card card-body" *ngFor='let new of news '>
+                            <img src="{{new.urlToImage}}" alt="" class="card-img-top float-left">
+                            <a class="text-center bg-danger" href="{{new.url}}">See more about it!!</a>
+                    </div>
+            </div>
+            <div class="col-md-3 mt-2 ">
+        
+                    <div class=" card card-body" *ngFor='let sports of sport'>
+                            <img src="{{sports.urlToImage}}" alt="" class="card-img-top float-left">
+                            <h3>{{sports.title}}</h3>
+                            <p>{{sports.description}}</p>
+                    </div>
+            </div>
+        </div>
+        </div>
+        
+        
+</body>

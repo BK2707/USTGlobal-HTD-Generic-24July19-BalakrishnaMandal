@@ -1,0 +1,25 @@
+body
+{
+    background-color:rgb(1, 1, 19);
+}
+.content
+{
+    background-color: rgb(241, 184, 126);
+    height: 200px;
+}
+.content1
+{
+background-color: aqua;
+height: 200px;
+}
+img:hover
+{
+    transform: scale(1.2,1.2);
+}
+h5
+{
+font-family: fantasy;
+font-style: italic;
+color:whitesmoke;
+
+}

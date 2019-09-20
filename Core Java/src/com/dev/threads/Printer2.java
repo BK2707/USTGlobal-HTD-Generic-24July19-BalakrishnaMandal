@@ -1,0 +1,14 @@
+package com.dev.threads;
+
+public class Printer2 {
+	
+	public void printVal(int i , String thread) {
+		for (int j = 0; j <=i; j++) {
+			
+			System.out.println("Tread: "+thread+" "+"j: "+j);
+			
+		}
+	}
+	
+
+}

@@ -1,0 +1,26 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Photo</th>
+            <th>Id</th>
+            <th>Name</th>
+            <th>RepUrl</th>
+            <th>Followers</th>
+            <th>Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = 'let user of users'><!-- importing the contents from an array -->
+            <td scope="row"></td>
+            <td>{{user.avatar_url}}</td>
+            <td>{{user.id}}</td>
+            <td>{{user.login}}</td>
+            <td>{{user.repos_url}}</td>
+            <td>{{user.followers_url}}</td>
+            <td>{{user.type}}</td>
+            <td>
+                <button class="btn btn-outline-danger">DELETE</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

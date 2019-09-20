@@ -1,0 +1,43 @@
+document.getElementById('tableid').innerHTML=
+`<table>
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Address</th>
+        <th>DOB</th>
+        <th>Email</th>
+        <th>Gender</th>
+    </tr>
+    <tr>
+        <td>Balakrishna</td>
+        <td>22</td>
+        <td>Bengaluru</td>
+        <td>27/07/1996</td>
+        <td>mandalkrishna@gmail.com</td>
+        <td>M</td>
+    </tr>
+    <tr>
+        <td>Gaurav</td>
+        <td>20</td>
+        <td>Mumbai</td>
+        <td>22/07/1999</td>
+        <td>gaurav1999@gmail.com</td>
+        <td>M</td>
+    </tr>
+    <tr>
+        <td>Sundari</td>
+        <td>14</td>
+        <td>Cuttack</td>
+        <td>22/08/2010</td>
+        <td>sundari5@gmail.com</td>
+        <td>F</td>
+    </tr>
+    <tr>
+        <td>Dinesh</td>
+        <td>26</td>
+        <td>Kolkata</td>
+        <td>22/07/1993</td>
+        <td>dinesh1993@gmail.com</td>
+        <td>M</td>
+    </tr>
+</table>`;

@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="card card-body col-md-6 offset-3 mt-3">
+            <form action="" method="POST" role="form" [formGroup]='registerForm' (ngSubmit)='printForm(registerForm)'>
+                    <legend class="text-center">Register!</legend>
+                
+                    <div class="form-group">
+                        <label for="">Name</label>
+                        <input type="text" name = "name" class="form-control" id="" placeholder="Full Name"formControlName = 'name'>
+                        <div class="alert alert-danger" 
+                        *ngIf='name.invalid && name.errors'>
+                        <div class="alert alert-danger" *ngIf='name.errors.minlength'>
+                        Please Enter name more than 3 letters!!
+                        </div>
+                        <div class="alert alert-danger" *ngIf='name.errors.required'>
+                        Please Enter your name!!
+                        </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Email</label>
+                        <input type="email" name = "email" class="form-control" id="" placeholder="emailId" formControlName = 'email'>
+                        <div class="alert alert-danger" 
+                        *ngIf='email.invalid && email.errors'>
+                        <div class="alert alert-danger" *ngIf='email.errors.minlength'>
+                        Please Enter email more than 3 letters!!
+                        </div>
+                        <div class="alert alert-danger" *ngIf='email.errors.required'>
+                        Please Enter your email!!
+                        </div>
+                        <div class="alert alert-danger" *ngIf='email.errors.email'>
+                        Please Enter your valid email!!
+                        </div>
+                        <div class="alert alert-danger" *ngIf='email.errors.noSpace'>
+                                no space should be there!
+                        </div>
+                        
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Mobile Number</label>
+                        <input type="text" name = "mob" class="form-control" id="" placeholder="Mobile Number"formControlName = 'mob'>
+                        <div class="alert alert-danger" 
+                        *ngIf='mob.invalid && mob.errors'>
+                        <div class="alert alert-danger" *ngIf='mob.errors.minlength'>
+                                Please Enter valid mobile number!!
+                        </div>
+                        <div class="alert alert-danger" *ngIf='mob.errors.required'>
+                        Please Enter your mobile number!!
+                        </div>
+                        
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Password</label>
+                        <input type="password" class="form-control" id="" placeholder="Password" name>
+                    </div>
+                    <div class="form-group">
+                        <label for=""> Confirm Password</label>
+                        <input type="password" class="form-control" id="" placeholder=" Confirm Password">
+                    </div>
+                    
+                    <div class="btn-group offset-4">
+                        <button type="submit" class="btn btn-outline-primary">Submit</button>
+                        <button type="reset" class="btn btn-outline-primary">Reset</button>
+                    </div>
+                </form>
+                
+    </div>
+</div>

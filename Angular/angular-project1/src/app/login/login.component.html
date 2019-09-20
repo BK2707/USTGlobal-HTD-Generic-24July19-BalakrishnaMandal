@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="col-md-5 offset-3 mt-5">
+            <div class="card card-body col md-6" >
+                    <form action="" method="POST" role="form" #loginForm='ngForm' (ngSubmit)='printForm(loginForm)'>
+                        <legend class="text-center">Login</legend>
+                    
+                                <div class="form-group">
+                                    <label for="username">Username</label>
+                                    <input type="email" class="form-control" id="" placeholder="Username" name="username"
+                                     #username = 'ngModel' ngModel required minlength="5" email >
+                                     <div *ngIf='username.touched && username.invalid'>
+                                         <div class="alert alert-danger"
+                                         *ngIf='username.errors.email'>
+                                            This input field takes only email</div>
+                                            <div class="alert alert-danger"
+                                            *ngIf='username.errors.minlength'>
+                                            This field needs only minimum length of 5</div>
+                                            </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Password</label>
+                                    <input type="password" class="form-control" id="" placeholder="Password" 
+                                     name = "password" #password='ngModel' ngModel pattern="bala">
+                                     <div *ngIf='password.invalid && password.touched'>
+                                         <div class="alert alert-danger" *ngIf='password.errors.pattern'>
+                                             Pattern dosn't match (name) 
+                                         </div>
+                                     </div>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-outline-success offset-2">Login</button>
+                                <button type="reset" class="btn btn-outline-success offset-3">Reset</button>
+                    </form>
+            </div>
+    </div>
+                
+</div>
+<br>
+<br>
+<br>
+<br>
+
+<div>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <th>
+                Serial No.
+            </th>
+            <th>
+                Username
+            </th>
+            <th>
+                Password
+            </th>
+        </thead>
+        <tbody>
+            <tr *ngFor ="let a of users ; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{a.username}}</td>
+                <td>{{a.password}}</td>
+            </tr>
+        </tbody>
+
+    </table>
+</div> 

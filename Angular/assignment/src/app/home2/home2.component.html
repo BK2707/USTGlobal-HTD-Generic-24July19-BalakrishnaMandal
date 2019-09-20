@@ -1,0 +1,7 @@
+<div class="card card-body col-md-3 offset-1 float-left mt-5" style="background-color: rgb(88, 125, 206)"
+    *ngFor="let product of firebaseService.details">
+    <h3 class="bg-dark , text-danger , text-center"> {{product.Name}} </h3>
+    <img src="{{product.img}}" alt="">
+    <br>
+    <p> {{product.description}}</p>
+</div>

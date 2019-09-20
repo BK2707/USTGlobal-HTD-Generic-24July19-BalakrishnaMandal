@@ -1,0 +1,18 @@
+public class BitwiseOperator  
+{
+	public static void main(String[] args) 
+	{
+		byte i = 1;
+		byte j = 5;
+		var c = 14.5;
+		System.out.println("B= "+c);
+		long b = i & j;
+		System.out.println("For &: "+b);
+
+		b = i | j;
+		System.out.println("For |: "+b);
+
+		b = i ^ j;
+		System.out.println("For ^: "+b);
+	}
+}

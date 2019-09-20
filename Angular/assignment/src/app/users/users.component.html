@@ -1,0 +1,10 @@
+<div  class="text-center bg-danger">
+    <b style="font-size: 100px;color: rgb(70, 39, 17)"><i>GITHUB USER</i></b>
+</div>
+
+<div class="card card-body col-md-4 float-left" style="background-color: rgb(90, 74, 54)" *ngFor='let use of user'>
+    <img src="{{use.avatar_url}}" alt="" class="card-img-top">
+    <h3>{{use.id}}</h3>
+    <h5>{{use.node_id}}</h5>
+    <a href="{{use.html_url}}" class="btn btn-outline-success">click for more info!</a>
+</div>

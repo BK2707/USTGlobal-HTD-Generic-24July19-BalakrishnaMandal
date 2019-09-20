@@ -1,0 +1,25 @@
+.img-div
+{
+    float:left;
+    border: 2px solid black;
+    margin-left: 25px;
+    border-radius: 55px;
+    overflow: hidden;/*for hide the image under the border*/
+    text-align: center;
+
+}
+img
+{
+width: 300px;
+height:250px;
+transition: all 1.80s;/*for giving zooming time*/
+}
+img:hover
+{
+transform: scale(1.2,1.2);/*in order to zoom the image (width,height)*/
+}
+.desc
+{
+    margin-top: 10px;
+    font-family: cursive;
+}
