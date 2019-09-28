@@ -1,0 +1,34 @@
+package com.dev.phone;
+
+import java.util.HashSet;
+
+public class Contact_Implement implements Contact_Manipulation {
+	HashSet<Contact> hs = new HashSet<Contact>();
+	
+
+	@Override
+	public void showAllContacts() {
+		System.out.println(hs);
+		
+	}
+
+	@Override
+	public void searchContacts() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void operate() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void add(Contact c) {
+		
+			hs.add(c);
+		
+	}
+
+}

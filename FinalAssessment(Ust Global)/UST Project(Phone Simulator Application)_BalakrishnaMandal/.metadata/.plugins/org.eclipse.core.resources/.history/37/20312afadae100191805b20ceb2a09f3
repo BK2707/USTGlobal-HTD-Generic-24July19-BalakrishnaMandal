@@ -1,0 +1,9 @@
+package com.dev.phone;
+
+public interface Contact_Manipulation {
+	
+	public void showAllContacts(Contact c);
+	public void searchContacts();
+	public void operate();
+	public void add(Contact c);
+}

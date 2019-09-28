@@ -1,0 +1,30 @@
+package com.dev.phone;
+
+import java.util.Scanner;
+
+public class Contact_Main {
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Contact_Implement ci = new Contact_Implement();
+		
+		System.out.println("Press 1 to show all contacts");
+		System.out.println("Press 2 to search for contact");
+		System.out.println("Press 3 to operate on contact");
+		int n =sc.nextInt();
+		
+		
+		if(n==1) {
+			ci.showAllContacts();
+		}
+		else if (n==2) {
+			ci.searchContacts();
+		}
+		else if(n==3) {
+			ci.operate();
+		}
+		
+
+	}
+
+}

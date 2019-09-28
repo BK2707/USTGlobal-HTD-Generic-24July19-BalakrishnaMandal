@@ -1,0 +1,49 @@
+package com.dev.phone;
+
+import java.util.HashSet;
+import java.util.Scanner;
+
+public class Contact_Implement implements Contact_Manipulation {
+	Scanner sc = new Scanner(System.in);
+	Contact c = new Contact();
+	
+	HashSet<Contact> hs = new HashSet<Contact>();
+	
+	
+
+	@Override
+	public void showAllContacts() {
+		System.out.println(hs);
+		
+	}
+
+	@Override
+	public void searchContacts() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void operate() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void add(Contact c) {
+		System.out.println("Enter the name: ");
+		String n = sc.nextLine();
+		c.setName(n);
+		
+		System.out.println("Enter the number: ");
+		long num = sc.nextInt();
+		c.setNumber(num);
+		
+		System.out.println("Enter the Group: ");
+		String g = sc.nextLine();
+		c.setGroup(g);
+			
+		
+	}
+
+}

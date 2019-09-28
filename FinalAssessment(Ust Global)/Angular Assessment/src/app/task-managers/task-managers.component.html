@@ -1,0 +1,19 @@
+<div class="container col-md-6 offset-3 mt-5">
+        <form action="post" #Addtask = 'ngForm' (ngSubmit)='sendTask(Addtask)'>
+            <input type="text" placeholder = "Add Task..." class="form-control" name = "task" #task="ngModel" ngModel required>
+            <br>
+            <button type="button" class="btn btn-outline-primary float-right">Add Task</button>
+        </form>
+</div>
+
+<div>
+    <table class="table table-bordered mt-5">
+        <tr *ngFor='let view of array;let i = index '>
+            <td>{{i+1}}</td>
+            <td>{{view.task}}</td>
+            <td>
+                <button type = "button" class="btn btn-outline-danger" (click)='delete(i)'>Delete</button>
+            </td>
+        </tr>
+    </table>
+</div>
